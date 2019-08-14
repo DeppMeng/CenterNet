@@ -27,9 +27,9 @@ class Config:
 
         # Directories
         self._configs["data_dir"]   = "data"
-        self._configs["cache_dir"]  = "cache"
+        self._configs["cache_dir"]  = "/mnt/centernet_data/cache"
         self._configs["config_dir"] = "config"
-        self._configs["result_dir"] = "results"
+        self._configs["result_dir"] = "/mnt/centernet_data/results"
 
         # Split
         self._configs["train_split"] = "trainval"
