@@ -25,6 +25,7 @@ torch.backends.cudnn.benchmark = True
 def parse_args():
     parser = argparse.ArgumentParser(description="Train CenterNet")
     parser.add_argument("cfg_file", help="config file", type=str)
+    parser.add_argument("model_name", help="model name", type=str)
     parser.add_argument("--iter", dest="start_iter",
                         help="train at iteration i",
                         default=0, type=int)
@@ -179,7 +180,7 @@ if __name__ == "__main__":
     with open(cfg_file, "r") as f:
         configs = json.load(f)
             
-    configs["system"]["snapshot_name"] = args.cfg_file
+    configs["system"]["snapshot_name"] = args.model_name
     system_configs.update_config(configs["system"])
 
     train_split = system_configs.train_split
